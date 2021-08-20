@@ -1,5 +1,6 @@
 const Podcast = require("podcast");
 const fs = require("fs");
+const getMP3Duration = require("get-mp3-duration");
 
 // Config
 const podcastName = "Avi Aryan Personal Podcast";
@@ -25,15 +26,23 @@ fs.readdirSync('./files/').forEach((file) => {
   if (file === '.gitkeep') {
 	  return;
   }
+  const fullPath = "./files/" + file;
+  // get file creation time
+  const { birthtime } = fs.statSync(fullPath);
+  // get mp3 duration
+  const buffer = fs.readFileSync(fullPath);
+  const duration = getMP3Duration(buffer);
+
   feed.addItem({
     title: file,
     description: file,
     url: `${rootURL}/files/${file}`,
-    date: new Date().toISOString(),
+    date: birthtime,
     enclosure: {
       url: `${rootURL}/files/${file}`,
-	  file: `./files/${file}`
+      file: fullPath,
     },
+    itunesDuration: Math.ceil(duration/1000)
   });
 });
 
