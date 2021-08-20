@@ -4,11 +4,12 @@ Host some MP3 files on S3 for your private podcast.
 
 ### Using
 
-1. Create S3 bucket and [add public access](https://stackoverflow.com/a/4709391/2295672) to entire bucket.
-2. Create `.env` file from `env.dist` and fill in the values.
-3. Run `npm start`.
-4. Upload `files/` folder and `feed.xml` to your S3 bucket.
-5. Access your feed at `https://<BUCKET_NAME>.s3.amazonaws.com/feed.xml`.
+1. Add mp3 files to `files/` folder in this repo.
+2. Create S3 bucket and [add public access](https://stackoverflow.com/a/4709391/2295672) to the entire bucket.
+3. Create `.env` file from `.env.dist` file and fill in the values.
+4. Run `npm start`. `feed.xml` is created.
+5. Upload `files/` folder and `feed.xml` to your S3 bucket.
+6. Access your podcast feed at `https://<BUCKET_NAME>.s3.amazonaws.com/feed.xml`.
 
 ### Works With
 
