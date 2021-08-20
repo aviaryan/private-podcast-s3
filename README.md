@@ -8,3 +8,9 @@ Another way - https://github.com/nerab/dropcaster
 
 Give public access to entire bucket - https://stackoverflow.com/a/4709391/2295672
 
+### Schema
+
+Validate using -
+
+* https://podba.se/validate/
+* https://castfeedvalidator.com/
