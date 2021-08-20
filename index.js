@@ -8,7 +8,8 @@ require("dotenv").config();
 const podcastName = "Avi Aryan Personal Podcast";
 const author = "Avi Aryan";
 const bucketName = process.env.BUCKET_NAME;
-const imageURL = "https://via.placeholder.com/1500/000000/FFFFFF/?text=Avi+Aryan+Podcast";
+const imageURL =
+  "https://via.placeholder.com/1500/000000/FFFFFF/?text=Avi+Aryan+Podcast";
 
 // Variables
 const rootURL = `https://${bucketName}.s3.amazonaws.com`;
@@ -24,9 +25,9 @@ const feed = new Podcast({
   itunesImage: imageURL,
 });
 
-fs.readdirSync('./files/').forEach((file) => {
-  if (file === '.gitkeep') {
-	  return;
+fs.readdirSync("./files/").forEach((file) => {
+  if (file === ".gitkeep") {
+    return;
   }
   const fullPath = "./files/" + file;
   // get file creation time
@@ -44,7 +45,7 @@ fs.readdirSync('./files/').forEach((file) => {
       url: `${rootURL}/files/${file}`,
       file: fullPath,
     },
-    itunesDuration: Math.ceil(duration/1000)
+    itunesDuration: Math.ceil(duration / 1000),
   });
 });
 
