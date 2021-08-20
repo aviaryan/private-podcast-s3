@@ -5,11 +5,11 @@ const getMP3Duration = require("get-mp3-duration");
 require("dotenv").config();
 
 // Config
-const podcastName = "Avi Aryan Personal Podcast";
-const author = "Avi Aryan";
+const podcastName = process.env.PODCAST_NAME;
+const author = process.env.PODCAST_AUTHOR;
 const bucketName = process.env.BUCKET_NAME;
 const imageURL =
-  "https://via.placeholder.com/1500/000000/FFFFFF/?text=Avi+Aryan+Podcast";
+  "https://via.placeholder.com/1500/000000/FFFFFF/?text=" + podcastName.replace(/\s/g, '+');
 
 // Variables
 const rootURL = `https://${bucketName}.s3.amazonaws.com`;
