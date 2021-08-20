@@ -1,11 +1,13 @@
 const Podcast = require("podcast");
 const fs = require("fs");
 const getMP3Duration = require("get-mp3-duration");
+// load env file
+require("dotenv").config();
 
 // Config
 const podcastName = "Avi Aryan Personal Podcast";
 const author = "Avi Aryan";
-const bucketName = 'bucket-name';
+const bucketName = process.env.BUCKET_NAME;
 const imageURL = "https://via.placeholder.com/1500/000000/FFFFFF/?text=Avi+Aryan+Podcast";
 
 // Variables

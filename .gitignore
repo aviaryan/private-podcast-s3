@@ -3,3 +3,4 @@ node_modules/
 files/*.mp3
 files/*.ogg
 feed.xml
+.env
