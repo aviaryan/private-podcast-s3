@@ -26,7 +26,7 @@ const feed = new Podcast({
 });
 
 fs.readdirSync("./files/").forEach((file) => {
-  if (file === ".gitkeep") {
+  if (file.startsWith('.')) {
     return;
   }
   const fullPath = "./files/" + file;
