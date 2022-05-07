@@ -16,6 +16,7 @@ Host some MP3 files on S3 for your private podcast.
 * Podcast Addict
 * Google Podcasts
 * Apple Podcasts
+* Spotify ([Manually add your RSS feed](https://support.spotifyforpodcasters.com/hc/en-us/articles/360043487932-Getting-your-podcast-on-Spotify) to Spotify)
 
 ### Schema
 

@@ -8,6 +8,7 @@ require("dotenv").config();
 const podcastName = process.env.PODCAST_NAME;
 const author = process.env.PODCAST_AUTHOR;
 const bucketName = process.env.BUCKET_NAME;
+const email = process.env.PODCAST_EMAIL;
 const imageURL =
   "https://via.placeholder.com/1500/000000/FFFFFF/?text=" + podcastName.replace(/\s/g, '+');
 
@@ -23,6 +24,8 @@ const feed = new Podcast({
   image_url: imageURL,
   author: author,
   itunesImage: imageURL,
+  itunesAuthor: author,
+  itunesOwner: { name: author, email },
 });
 
 fs.readdirSync("./files/").forEach((file) => {
