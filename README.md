@@ -18,6 +18,12 @@ Host some MP3 files on S3 for your private podcast.
 * Apple Podcasts
 * Spotify ([Manually add your RSS feed](https://support.spotifyforpodcasters.com/hc/en-us/articles/360043487932-Getting-your-podcast-on-Spotify) to Spotify)
 
+### Automation Script
+
+You can use the [podcast-push](extras/podcast-push) script to automate creating `feed.xml` and uploading the files to S3.
+
+So you just need to add new mp3 files to `files/` folder and run this script and your podcast will be updated.
+
 ### Schema
 
 Validate using -

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+cd /full/path/to/podcast/project/folder
+
+# safe checks to make sure we are in correct folder
+if [ ! -d files ]; then
+    echo "no files folder"
+    exit 1
+fi
+
+if [ ! -d node_modules ]; then
+    echo "no node modules folder"
+    exit 1
+fi
+
+# generate feed.xml
+npm start
+
+# sync it to S3 using rclone
+# `s3podcast` is the remote name set in rclone for S3 connection.
+# change `s3-bucket-name` to your S3 bucket ID
+rclone sync feed.xml s3podcast:s3-bucket-name
+rclone sync files s3podcast:s3-bucket-name/files  
