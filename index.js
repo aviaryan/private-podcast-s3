@@ -38,10 +38,12 @@ fs.readdirSync("./files/").forEach((file) => {
   // get mp3 duration
   const buffer = fs.readFileSync(fullPath);
   const duration = getMP3Duration(buffer);
+  // create basic title
+  const title = file.replace(/\.[a-z0-9]+$/i, "").replace(/_/g, " ");
 
   feed.addItem({
-    title: file,
-    description: file,
+    title: title,
+    description: title,
     url: `${rootURL}/files/${file}`,
     date: birthtime,
     enclosure: {
