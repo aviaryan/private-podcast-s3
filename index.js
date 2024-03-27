@@ -9,6 +9,7 @@ const podcastName = process.env.PODCAST_NAME;
 const author = process.env.PODCAST_AUTHOR;
 const bucketName = process.env.BUCKET_NAME;
 const email = process.env.PODCAST_EMAIL;
+const feedFileName = process.env.FEED_FILE_NAME;
 const imageURL =
   "https://via.placeholder.com/1500/000000/FFFFFF/?text=" + podcastName.replace(/\s/g, '+');
 
@@ -56,4 +57,4 @@ fs.readdirSync("./files/").forEach((file) => {
 
 const xml = feed.buildXml();
 
-fs.writeFileSync("feed.xml", xml);
+fs.writeFileSync(feedFileName, xml);

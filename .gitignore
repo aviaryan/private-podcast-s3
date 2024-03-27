@@ -1,9 +1,8 @@
 .DS_Store
 node_modules/
 files/*.mp3
-files/*.m4b
 files/*.m4a
 files/*.ogg
 files_not_live/
-feed.xml
+feed*.xml
 .env
